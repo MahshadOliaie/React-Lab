@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+
+}
+
+.mainImg{
+    overflow: hidden;
+    width: 78%;
+    height: 550px;
+    margin-bottom: 20px;
+}
+
+
+
+.cardContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.card {
+    width: 23%;
+    aspect-ratio: .8;
+    overflow: hidden;
+}
+
+img {
+    width: 100%;
+}
