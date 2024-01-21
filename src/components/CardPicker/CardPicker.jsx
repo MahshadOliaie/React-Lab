@@ -21,7 +21,7 @@ function CardPicker() {
                 <div className="cardContainer">
                     {images.map(item => {
                         return <div key={item} className="card" onClick={() => select(item)}>
-                            <Card image={item} current={(item == image)&& "current"} />
+                            <img src={`/${item}.jpg`} className={(item == image) && "current"} alt="" />
                         </div>
                     })}
                 </div>
