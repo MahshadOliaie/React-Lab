@@ -28,8 +28,25 @@
     width: 23%;
     aspect-ratio: .8;
     overflow: hidden;
+    display: flex;
+    padding: 2px;
+    align-items: center;
+    justify-content: center;
 }
 
 img {
     width: 100%;
+}
+
+
+.card img{
+    opacity: .5;
+}
+
+.card:has(.current){
+    border-bottom: 3px solid rgba(0, 0, 0, 0.709);
+}
+
+.card:has(.current) img{
+    opacity: 1;
 }
