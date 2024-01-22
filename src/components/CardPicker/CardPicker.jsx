@@ -1,6 +1,5 @@
 import { useState } from "react";
 import './cardPicker.css'
-import Card from "./Card";
 
 const images = ["1", "2", "3", "4"];
 
