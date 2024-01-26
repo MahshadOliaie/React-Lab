@@ -4,7 +4,7 @@ import './form.css'
 
 function Form() {
 
-    const [formObj, setFormObj] = useState({ "input1": "", "input2": "", "input3": "" , "gender":""})
+    const [formObj, setFormObj] = useState({ "input1": "", "input2": "", "input3": "" , "gender":"" , "lang":""})
 
     function handleChange() {
         let value = event.target.value;
@@ -18,14 +18,21 @@ function Form() {
             <input value={formObj.input2} id='input2' type="text" placeholder="family" className="formFamily" onChange={handleChange} />
             <input value={formObj.input3} id='input3' type="number" placeholder="age" className="formAge" onChange={handleChange} />
 
-            <select name="gender" id="gender" onChange={handleChange}>
-                <option value="">-- select gender --</option>
-                <option value="female">female</option>
-                <option value="male">male</option>
-                <option value="none">prefer not to say</option>
+            <select name="lang" id="lang" onChange={handleChange}>
+                <option value="">Select Language</option>
+                <option value="english">English</option>
+                <option value="persian">Persian</option>
             </select>
-            
-            <p>{formObj.gender}</p>
+
+            <div className='radio'>
+                <input type="radio" name="gender" id="gender" value={"Male"} onClick={handleChange}/>
+                <label htmlFor="student">Male</label>
+
+                <input type="radio" name="gender" id="gender" value={"Female"} onClick={handleChange}/>
+                <label htmlFor="student">Female</label>
+            </div>
+
+            <button type="submit">DONE</button>
         </form>
     )
 
