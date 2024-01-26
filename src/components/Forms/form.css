@@ -3,11 +3,25 @@
 form{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+    align-items: flex-start;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.406);
+    padding: 30px;
+    width: 300px;
+    gap: 20px;
 }
 
 form input{
-    margin: 10px;
-    padding: 10px;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(57, 128, 95, 0.431);
+}
+
+form select{
+    padding: 8px;
+    border: none;
+    background-color: rgba(57, 128, 95, 0.82);
+    color: white;
+    border-radius: 5px;
 }
