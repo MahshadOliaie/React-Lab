@@ -17,7 +17,6 @@ function CityInput() {
 
     function enterSuggested() {
         if (event.key === 'Enter') {
-            event.preventDefault();
             setInputValue(suggested)
         }
     }

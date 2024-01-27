@@ -14,15 +14,21 @@ function Form() {
     }
 
 
-    function enter() {
-        event.preventDefault();
+    function handleEnter() {
+        if (event.key === 'Enter') {
+            if (event.target.id == "input3")
+                event.target.nextElementSibling.firstChild.focus()
+
+            else
+                event.target.nextElementSibling.focus()
+        }
     }
 
     return (
         <form>
-            <input value={formObj.input1} id='input1' type="text" placeholder="name" className="formName" onChange={handleChange} />
-            <input value={formObj.input2} id='input2' type="text" placeholder="family" className="formFamily" onChange={handleChange} />
-            <input value={formObj.input3} id='input3' type="number" placeholder="age" className="formAge" onChange={handleChange} />
+            <input value={formObj.input1} id='input1' type="text" placeholder="Name" className="formName" onChange={handleChange} onKeyUp={handleEnter} />
+            <input value={formObj.input2} id='input2' type="text" placeholder="Family" className="formFamily" onChange={handleChange} onKeyUp={handleEnter} />
+            <input value={formObj.input3} id='input3' type="number" placeholder="Age" className="formAge" onChange={handleChange} onKeyUp={handleEnter} />
             <CityInput />
 
 
@@ -41,10 +47,11 @@ function Form() {
                 <label htmlFor="student">Female</label>
             </div>
 
-            <p className='btn' onKeyUp={enter}>DONE</p>
+            <p className='btn'>DONE</p>
         </form>
     )
 
 }
 
 export default Form;
+
