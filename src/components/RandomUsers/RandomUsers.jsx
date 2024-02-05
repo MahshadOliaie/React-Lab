@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import User from "./User";
+import './randomusers.css'
 
 
 function RandomUsers() {
@@ -10,11 +12,14 @@ function RandomUsers() {
 
         return () => { };
     }, [])
-    console.log(users)
+
     return (
-        users.map((user, index) => {
-            return <p key={index}>{user.name.first}</p>
-        })
+        <div className="userContainer">{
+            users.map((user, index) => {
+                return <User key={index} data={user} />
+            })
+        }</div>
+
     )
 
 }
