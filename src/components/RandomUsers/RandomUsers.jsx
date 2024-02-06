@@ -16,7 +16,7 @@ function RandomUsers() {
     return (
         <div className="userContainer">{
             users.map((user, index) => {
-                return <User key={index} data={user} />
+                return <User data={user} key={index}  />
             })
         }</div>
 
