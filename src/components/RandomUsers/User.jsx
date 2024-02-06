@@ -4,11 +4,12 @@ import Icon from './Icon';
 
 function User(Props) {
     const { picture, name, email, location, dob, phone } = Props.data
+    let d = new Date(dob.date)
     let obj = {
         "name": `${name.first} ${name.last}`,
         "email": email,
         "address": `${location.street.number} ${location.street.name} St`,
-        "birthday": dob.date,
+        "birthday": d.toDateString(),
         "phone": phone,
     }
 
