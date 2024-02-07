@@ -3,7 +3,6 @@ import './randomusers.css'
 import Icon from './Icon';
 
 function User(Props) {
-    debugger
     const { picture, name, email, location, dob, phone } = Props.data
     let d = new Date(dob.date)
     let obj = {

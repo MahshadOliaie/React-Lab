@@ -1,12 +1,16 @@
 import { useEffect, useState } from "react";
 import User from "./User";
 import './randomusers.css'
+import Gender from "./Gender";
 
 
 function RandomUsers() {
     const [users, setUsers] = useState([])
     const [inputValue, setInputValue] = useState("")
     const [filteredUsers , setFilteredUsers] = useState([])
+    const [genderSelector , setGenderSelector] = useState("") 
+
+
     useEffect(() => {
         fetch('https://randomuser.me/api/?results=50')
             .then(res => res.json())
@@ -14,6 +18,8 @@ function RandomUsers() {
 
         return () => { };
     }, [])
+
+
 
     function search() {
         let value = event.target.value
@@ -44,6 +50,7 @@ function RandomUsers() {
         })
 
         setFilteredUsers(filter)
+        setGenderSelector(gender)
 
     }
 
@@ -52,8 +59,8 @@ function RandomUsers() {
         <div className="toolbar">
             <input type="search" className="search" placeholder="search..." onChange={search} value={inputValue}/>
             <div className="btns">
-                <button onClick={filterGender}>male</button>
-                <button onClick={filterGender}>female</button>
+                <Gender onClick={filterGender} genderSelector={genderSelector} gender="male"/>
+                <Gender onClick={filterGender} genderSelector={genderSelector} gender="female"/>
             </div>
         </div>
             <div className="userContainer">{
