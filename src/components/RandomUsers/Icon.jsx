@@ -10,7 +10,7 @@ function Icon({ onclick, currentTitle, path }) {
     }
 
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" className={(path == currentTitle) && "currentInfo"} viewBox="0 0 512 512" onClick={() => onclick(path)}>{icons[path]}</svg>
+        <svg xmlns="http://www.w3.org/2000/svg" className={(path == currentTitle)? "currentInfo" : ""} viewBox="0 0 512 512" onClick={() => onclick(path)}>{icons[path]}</svg>
     )
 }
 

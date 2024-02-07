@@ -3,6 +3,7 @@ import './randomusers.css'
 import Icon from './Icon';
 
 function User(Props) {
+    debugger
     const { picture, name, email, location, dob, phone } = Props.data
     let d = new Date(dob.date)
     let obj = {
@@ -13,11 +14,11 @@ function User(Props) {
         "phone": phone,
     }
 
-    const [info, setInfo] = useState({ "title": "name", "apiTitle": obj.name })
+    const [info, setInfo] = useState("name")
     const [svgState, setSvgState] = useState("name")
     
     function handleClick(title) {
-        setInfo({ "title": title, "apiTitle": obj[title] })
+        setInfo(title)
         setSvgState(title)
     }
     return (
@@ -25,8 +26,8 @@ function User(Props) {
             <div className="userCard">
                 <div className="img"><img src={picture.large} alt="" /></div>
                 <div className="about">
-                    <p className="title">My <span>{info.title}</span> is</p>
-                    <h1 className="titleInfo">{info.apiTitle}</h1>
+                    <p className="title">My <span>{info}</span> is</p>
+                    <h1 className="titleInfo">{obj[info]}</h1>
                 </div>
                 <div className="icons">
                     <Icon onclick={(path)=> handleClick(path)} currentTitle={svgState} path="name" />
