@@ -37,7 +37,13 @@ function RandomUsers() {
 
     return (
         <>
+        <div className="toolbar">
             <input type="search" className="search" placeholder="search..." onChange={search} value={inputValue}/>
+            <div className="btns">
+                <button>Male</button>
+                <button>Female</button>
+            </div>
+        </div>
             <div className="userContainer">{
                 filteredUsers.map((user, index) => {
                     return <User data={user} key={index} />

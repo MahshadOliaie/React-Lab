@@ -90,9 +90,36 @@ body {
 .search{
     border: none;
     background-color: rgba(21, 144, 111, 0.375);
-    padding: 15px;
-    width: 200px;
+    padding: 13px;
+    width: 40%;
+    max-width: 200px;
     border-radius: 20px;
-    margin-left: 8%;
     box-shadow: inset 0 5px 10px rgba(1, 42, 30, 0.322);
+}
+
+.toolbar , .btns{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.toolbar{
+    width: 82%;
+    margin: auto;
+}
+
+
+button{
+    border: none;
+    background-color: rgba(21, 144, 111, 0.375);
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: inset 0 5px 10px rgba(1, 42, 30, 0.322);
+    margin-left: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+button:hover{
+    box-shadow: 0 5px 10px rgba(1, 42, 30, 0.462);
+
 }
