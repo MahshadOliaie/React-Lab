@@ -34,14 +34,26 @@ function RandomUsers() {
     
     }
 
+    function filterGender(){
+        let gender = event.target.textContent
+        let filter = []
+        users.map(user => {
+            if (user.gender == gender) {
+                filter.push(user)
+            }
+        })
+
+        setFilteredUsers(filter)
+
+    }
 
     return (
         <>
         <div className="toolbar">
             <input type="search" className="search" placeholder="search..." onChange={search} value={inputValue}/>
             <div className="btns">
-                <button>Male</button>
-                <button>Female</button>
+                <button onClick={filterGender}>male</button>
+                <button onClick={filterGender}>female</button>
             </div>
         </div>
             <div className="userContainer">{
