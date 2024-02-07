@@ -2,19 +2,20 @@ import { useEffect, useState } from "react";
 import User from "./User";
 import './randomusers.css'
 import Gender from "./Gender";
+import SkeletonUi from "./SkeletonUi/SkeletonUi";
 
 
 function RandomUsers() {
     const [users, setUsers] = useState([])
     const [inputValue, setInputValue] = useState("")
-    const [filteredUsers , setFilteredUsers] = useState([])
-    const [genderSelector , setGenderSelector] = useState("") 
+    const [filteredUsers, setFilteredUsers] = useState([])
+    const [genderSelector, setGenderSelector] = useState("")
 
 
     useEffect(() => {
         fetch('https://randomuser.me/api/?results=50')
             .then(res => res.json())
-            .then(data => {setUsers(data.results); setFilteredUsers(data.results)})
+            .then(data => { setUsers(data.results); setFilteredUsers(data.results) })
 
         return () => { };
     }, [])
@@ -37,10 +38,10 @@ function RandomUsers() {
 
         setFilteredUsers(filter)
 
-    
+
     }
 
-    function filterGender(){
+    function filterGender() {
         let gender = event.target.textContent
         let filter = []
         users.map(user => {
@@ -56,18 +57,21 @@ function RandomUsers() {
 
     return (
         <>
-        <div className="toolbar">
-            <input type="search" className="search" placeholder="search..." onChange={search} value={inputValue}/>
-            <div className="btns">
-                <Gender onClick={filterGender} genderSelector={genderSelector} gender="male"/>
-                <Gender onClick={filterGender} genderSelector={genderSelector} gender="female"/>
+            <div className="toolbar">
+                <input type="search" className="search" placeholder="search..." onChange={search} value={inputValue} />
+                <div className="btns">
+                    <Gender onClick={filterGender} genderSelector={genderSelector} gender="male" />
+                    <Gender onClick={filterGender} genderSelector={genderSelector} gender="female" />
+                </div>
             </div>
-        </div>
             <div className="userContainer">{
-                filteredUsers.map((user, index) => {
+                (filteredUsers.length > 0) ? filteredUsers.map((user, index) => {
                     return <User data={user} key={index} />
+                }) : [...new Array(50)].map(item => {
+                    return <SkeletonUi />
                 })
-            }</div>
+            }
+            </div>
 
         </>
 
