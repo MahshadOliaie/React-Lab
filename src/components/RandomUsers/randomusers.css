@@ -1,5 +1,6 @@
 .userCard {
     width: 400px;
+    background-color: whitesmoke;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.361);
     padding: 30px;
     display: flex;
@@ -60,6 +61,7 @@ img {
 body {
     display: block;
     padding: 40px;
+    background-color: rgb(208, 208, 208);
 }
 
 
