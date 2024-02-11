@@ -9,7 +9,7 @@ function User(Props) {
         "name": `${name.first} ${name.last}`,
         "email": email,
         "address": `${location.street.number} ${location.street.name} St`,
-        "birthday": d.toDateString(),
+        "birthday": d.toLocaleDateString(),
         "phone": phone,
     }
 
