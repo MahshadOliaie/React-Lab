@@ -31,7 +31,7 @@ function RandomUsers() {
         let filter = []
         users.map(user => {
             let newName = `${user.name.first} ${user.name.last}`
-            if (newName.startsWith(value)) {
+            if (newName.startsWith(value.toUpperCase())) {
                 filter.push(user)
             }
         })
